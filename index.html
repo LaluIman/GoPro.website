@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoPro</title>
    <link rel="stylesheet" href="src/output.css">
    <link rel="shortcut icon" href="src/img/gorpo logo2.png" type="image/x-icon">
+   <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+    } else {
+  document.documentElement.classList.remove('dark')
+    }
+   </script>
 </head>
-<body> 
+<body class="dark:bg-black"> 
   <!-- header start -->
   <header class="absolute bg-white top-0 left-0 w-full z-10 flex items-center">
     <div class="w-full ml-auto mr-auto px-[16px] py-[7px] lg:py-[5px]">
@@ -26,6 +33,18 @@
               <li><a href="" class="tracking-widest py-2 mx-8 flex font-black font-mono text-lg hover:text-x transition duration-500 ease-in-out lg:py-0 lg:text-sm">Accesorries</a></li>
               <li><a href="" class="tracking-widest py-2 mx-8 flex font-black font-mono text-lg hover:text-x transition duration-500 ease-in-out lg:py-0 lg:text-sm">LifeStyle Gear</a></li>
               <li><a href="" class="tracking-wide py-2 mx-8 flex font-black font-mono text-[17px] hover:text-x transition duration-500 ease-in-out lg:py-0 lg:text-sm">GoPro Subcription</a></li>
+              <li class="items-center pl-8">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(0, 0, 0);"><path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg></span>
+                  <input type="checkbox" id="dark-toggle" class="hidden">
+                  <label for="dark-toggle">
+                    <div class="background-toggle flex h-5 w-9 rounded-full bg-slate-400 items-center p-1 cursor-pointer transition duration-300 ease-in-out">
+                      <div class="toggle-circle h-4 w-4 bg-white rounded-full"></div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(0, 0, 0);"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg></span>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>
@@ -60,20 +79,20 @@
         <div class="flex flex-wrap">
           <div class="w-full px-4 py-3 lg:w-1/2 lg:pt-10">
             <h1 class="text-5xl font-extrabold text-x mb-3 uppercase italic">About us</h1>
-            <h3 class="font-bold text-2xl mb-3 uppercase">Discover the world's most versatile action cameras + accessories.</h3>
-            <p class="font-medium"> Possibilities are endless with waterproof, live streaming, stabilizing features + more.</p>
+            <h3 class="font-bold text-2xl mb-3 uppercase  dark:text-white">Discover the world's most versatile action cameras + accessories.</h3>
+            <p class="font-medium dark:text-white"> Possibilities are endless with waterproof, live streaming, stabilizing features + more.</p>
           </div>
           <div class="w-full px-4 py-3 lg:w-1/2 lg:pt-10">
             <h1 class="text-3xl font-semibold mb-2 uppercase">Our <span class="font-extrabold">Social media</span></h1>
-            <p class="mb-3">check our latest news in our social and see amazing event that will come!. </p>
+            <p class="mb-3 dark:text-white">check our latest news in our social and see amazing event that will come!. </p>
             <div class="flex items-center">
-              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-gradient-to-tl from-red-400 to-blue-400 hover:text-white transition duration-500 ease-in-out hover:border-white">
+              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-gradient-to-tl from-red-400 to-blue-400 hover:text-white dark:text-white transition duration-500 ease-in-out hover:border-white">
                 <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
               </a>
-              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-black hover:text-white transition duration-500 ease-in-out hover:border-white">
+              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-black hover:text-white dark:text-white transition duration-500 ease-in-out hover:border-white">
                 <svg role="img" viewBox="0 0 24 24" width="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
               </a>
-              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-red-500 hover:text-white transition duration-500 ease-in-out hover:border-white">
+              <a href="#" class="mx-3 border border-black rounded-full px-3 py-3 hover:bg-red-500 hover:text-white dark:text-white transition duration-500 ease-in-out hover:border-white">
                 <svg role="img" viewBox="0 0 24 24" width="20" class="fill-current" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
             </div>
@@ -86,7 +105,7 @@
    <!-- section picture start -->
    <section id="picture">
       <div class="max-w-[1240px] mx-auto py-16 px-4 text-center">
-         <h1 class="text-3xl font-bold mb-5 md:text-4xl uppercase">the accesorries to help your <span class="font-extrabold text-x">gopro</span> <br>onto the next level</h1>
+         <h1 class="text-3xl font-bold mb-5 md:text-4xl uppercase dark:text-white">the accesorries to help your <span class="font-extrabold text-x">gopro</span> <br>onto the next level</h1>
          <button class="text-white tracking-widest font-mono font-semibold text-sm mb-10 md:text-lg bg-black py-2 px-5 rounded-lg transition duration-500 ease-in-out mr-4 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl">See Others</button>
          <div class="grid grid-rows-none gap-4 md:grid-cols-5">
             <img src="src/img/pic1.webp" alt="/" class="w-full h-full object-cover col-span-2 md:col-span-3 row-span-2 ">
@@ -104,7 +123,7 @@
      <!-- card -->
      <section>
       <div class="max-w-[1240px] mx-auto py-16 px-4 text-center">
-        <h1 class="text-3xl font-bold mb-5 md:text-4xl uppercase">Check our Product</h1>
+        <h1 class="text-3xl font-bold mb-5 md:text-4xl uppercase dark:text-white">Check our Product</h1>
       </div>
       <div class="flex flex-wrap justify-center">
         <!-- Product Card 1 -->
@@ -148,47 +167,47 @@
      <!-- card -->
 
    <!-- section feature -->
-   <div class="overflow-hidden bg-white py-24 sm:py-32">
+   <div class="overflow-hidden py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
         <div class="lg:pr-8 lg:pt-4">
           <div class="lg:max-w-lg">
-            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Subscribe + Get the Most Out of Your GoPro</p>
+            <p class="mt-2 text-3xl font-bold trackingbold text-white sm:text-5xl">Subscribe + Get the Most Out of Your GoPro</p>
   
             <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/camera-replacement.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/camera-replacement.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   Damaged camera replacement¹
                 </dt>
               </div>
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/cloud.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/cloud.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   Unlimited cloud backup of GoPro media at 100% quality²
                 </dt>
               </div>
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/cloud-connect.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/cloud-connect.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   Auto-upload footage while your camera charges³
                 </dt>
               </div>
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/quik.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/quik.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   Automatic highlight videos
                 </dt>
               </div>
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/pricetag.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/pricetag.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   $100 off your next GoPro⁴ + up to 50% off at GoPro.com⁵
                 </dt>
               </div>
               <div class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <img src="src/img/quik-mac.svg" alt="" class="absolute left-1 top-1 h-7 w-7" >
+                <dt class="inline font-semibold text-gray-900 dark:text-white">
+                  <img src="src/img/quik-mac.svg" alt="" class="absolute left-1 top-1 h-7 w-7 " >
                   New! Quik for Mac coming soon.
                 </dt>
               </div>
@@ -204,10 +223,10 @@
   
    <!-- section testimonials -->
    <section id="testimonials">
-         <div class="bg-white py-24 sm:py-32">
+         <div class=" py-24 sm:py-32">
             <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
               <div class="max-w-2xl">
-                <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl uppercase">What creator said about our product</h2>
+                <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl uppercase dark:text-white">What creator said about our product</h2>
                 
               </div>
               <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
@@ -215,9 +234,9 @@
                   <div class="flex items-center gap-x-6">
                     <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                     <div>
-                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white">Leslie Alexander</h3>
                       <p class="text-lg font-semibold leading-6 text-x">Content creator</p>
-                      <p>people said it good, but it is good quality product it helps my content easier.</p>
+                      <p class="dark:text-white">people said it good, but it is good quality product it helps my content easier.</p>
                     </div>
                   </div>
                 </li>
@@ -226,9 +245,9 @@
                   <div class="flex items-center gap-x-6">
                     <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
                     <div>
-                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900">Bryan Bryan</h3>
+                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white">Bryan Bryan</h3>
                       <p class="text-lg font-semibold leading-6 text-x">Designer</p>
-                      <p>this product make me blown my mind🤯</p>
+                      <p class="dark:text-white">this product make me blown my mind🤯</p>
                     </div>
                   </div>
                 </li>
@@ -237,9 +256,9 @@
                   <div class="flex items-center gap-x-6">
                     <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
                     <div>
-                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900">Lee Long</h3>
+                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white">Lee Long</h3>
                       <p class="text-lg font-semibold leading-6 text-x">Artist</p>
-                      <p>安杰的产品也很酷。</p>
+                      <p class="dark:text-white">安杰的产品也很酷。</p>
                     </div>
                   </div>
                 </li>
@@ -248,9 +267,9 @@
                   <div class="flex items-center gap-x-6">
                     <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
                     <div>
-                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900">Katie Mac</h3>
+                      <h3 class="text-xl font-semibold leading-7 tracking-tight text-gray-900 dark:text-white">Katie Mac</h3>
                       <p class="text-lg font-semibold leading-6 text-x">VideoGrapher</p>
-                      <p>my production team is amaze with the product and i satisfied too!</p>
+                      <p class="dark:text-white">my production team is amaze with the product and i satisfied too!</p>
                     </div>
                   </div>
                 </li>
@@ -373,7 +392,7 @@
     
           <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
             <div>
-              <p class="font-medium text-gray-900">Services</p>
+              <p class="font-bold text-white">Services</p>
     
               <ul class="mt-6 space-y-4 text-sm">
                 <li>
@@ -399,7 +418,7 @@
             </div>
     
             <div>
-              <p class="font-medium text-gray-900">Company</p>
+              <p class="font-bold text-white">Company</p>
     
               <ul class="mt-6 space-y-4 text-sm">
                 <li>
@@ -417,7 +436,7 @@
             </div>
     
             <div>
-              <p class="font-medium text-gray-900">Helpful Links</p>
+              <p class="font-bold text-white">Helpful Links</p>
     
               <ul class="mt-6 space-y-4 text-sm">
                 <li>
@@ -435,7 +454,7 @@
             </div>
     
             <div>
-              <p class="font-medium text-gray-900">Legal</p>
+              <p class="font-bold text-white">Legal</p>
     
               <ul class="mt-6 space-y-4 text-sm">
                 <li>
@@ -461,6 +480,14 @@
         <p class="text-xs text-gray-500">&copy; 2022. Company Name. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- backto top btn -->
+    <a href="#home" class="fixed bottom-4 right-4 z-[9999] h-10 w-10 bg-gray-200 rounded-full hidden animate-bounce" id="to-top">
+    <span class="flex justify-center items-center mt-2 ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" class="fill-current" style="fill: rgb(0, 0, 0);transform: msFilter"><path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path></svg>
+    </span>
+    </a>
+    <!-- backtop -->
 
     <script src="src/JS/script.js"></script>
 </body>
